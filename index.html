@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="js-disabled">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--CSS Links-->
+    <link rel="stylesheet" href="js/plugins/jAlert/jAlert.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="web">
+        <div class="input-screen">
+            <div class="title">
+                Enter an email that you want associated with the image
+            </div>
+            <button id="show-gallery">Show gallery</button>
+            <div>
+                <img id="random-image" alt="A random image">
+            </div>
+            <form method="GET" id="email-form" onsubmit="return validateForm()" novalidate>
+                <input placeholder="*Email Address..." id="email-address" name="email" type="email" maxlength="128" value>
+                <button id="email-submit">Submit</button>
+            </form>
+        </div>
+        <div class="gallery-screen">
+            <div class="title">
+                This is a gallery of your images, along with their emails
+            </div>
+            <button id="show-input">Show input</button>
+            <div id="gallery-output">
+                
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <!--JS Scripts-->
+    <script src="js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="js/plugins/jAlert/jAlert.min.js"></script>
+    <script src="js/plugins/jAlert/jAlert-functions.min.js"></script>
+    <script src="js/plugins/jAlert/jAlert.css.min.js"></script>
+    <script src="js/application.js"></script>
+</body>
+</html>

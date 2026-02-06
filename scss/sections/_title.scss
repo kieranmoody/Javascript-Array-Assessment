@@ -1,0 +1,86 @@
+
+.gallery-screen {
+    border-top: 5px solid black;
+}
+
+.gallery-email {
+    width: 220px;           /* all boxes same width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* center the stack + email label */
+}
+
+.gallery-images {
+    position: relative;
+    width: 200px;       /* fixed width of stack */
+    height: 220px;      /* fixed height of stack */
+    border-radius: 6px;
+    overflow: visible;  /* let images overflow slightly if needed */
+}
+
+
+/* All images in stack are absolute */
+.gallery-images img {
+    position: absolute;
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+#gallery-output {
+    display: flex;
+    flex-wrap: wrap;        /* wrap to next line if no space */
+    gap: 40px;              /* horizontal & vertical spacing between boxes */
+    justify-content: flex-start; /* align boxes to left */
+    padding: 20px;
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.web {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Both screens fill the viewport */
+.input-screen,
+.gallery-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.input-screen {
+    z-index: 2;
+    background: #fff;
+    transition: transform 2s ease-in-out;
+    transform: translateX(0);
+}
+
+.gallery-screen {
+    z-index: 1;
+    background: #f6f6f6;
+    display: none;
+}
+
+#show-gallery {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#show-input {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
