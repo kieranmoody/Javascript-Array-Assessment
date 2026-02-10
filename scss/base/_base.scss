@@ -1,0 +1,67 @@
+//Base and Shared CSS
+@use "../utilities/index" as *;
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.web {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    font-family: $default-text-family;
+}
+
+.input-screen,
+.gallery-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $background-color;
+    color: $base-font-color;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 10vh;
+    background: $surface-color;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    padding: 15px 10%;
+}
+
+.title h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.subtitle {
+    color: $subtitle-color;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+}
+.title {
+    padding: 10px 0 15px;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        padding: 30px 15%;
+        max-width: 900px;
+    }
+    .title h1 {
+        font-size: 2.25em;
+    }
+    .title {
+        padding-bottom: 25px;
+    }
+}

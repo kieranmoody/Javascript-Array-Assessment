@@ -2,3 +2,6 @@
 @use "functions.scss";
 @use "icons.scss";
 @use "mixins.scss";
+
+@forward "config.scss";
+@forward "mixins.scss";

@@ -1,0 +1,12 @@
+//Mixins
+@use "config.scss" as *;
+
+@mixin buttons {
+    background: $primary-color;
+    color: $secondary-font-color;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+

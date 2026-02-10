@@ -1,0 +1,103 @@
+//No Javascript Popup
+@use "../utilities/index" as *;
+#cookie-wrapper {
+  display: none;
+}
+.js-disabled #cookie-wrapper {
+  display: block;
+}
+
+#no-js-image,
+.js-disabled #random-image {
+  display: none;
+}
+.js-disabled #no-js-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.js-disabled #cookie-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -ms-flex-pack: center !important;
+  padding: 30px;
+}
+
+.js-disabled #cookie-prompt {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.js-disabled #cookie-container #cookie-prompt {
+  margin: auto;
+}
+
+.js-disabled #cookie-box {
+  position: relative;
+  background-color: $surface-color;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: none;
+}
+
+.js-disabled #cookie-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.42857143px;
+}
+
+.js-disabled #cookie-title {
+  margin: 0;
+  line-height: 1.42857143;
+  font-size: 1.625rem;
+  font-weight: 400;
+  color: $base-font-color;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+.js-disabled #cookie-body {
+  position: relative;
+  padding: 20px;
+}
+
+.js-disabled #cookie-body p {
+  display: block;
+  line-height: 1.875rem;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  color: $subtitle-color;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .js-disabled #cookie-prompt {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .js-disabled #cookie-box {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+

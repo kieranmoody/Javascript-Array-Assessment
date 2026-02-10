@@ -1,0 +1,42 @@
+//Zoomed Images
+@use "../utilities/index" as *;
+.zoom-gallery {
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.zoom-email {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.zoom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.zoom-grid-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: zoom-in;
+    transition: 0.2s;
+}
+
+.zoom-grid-img:hover {
+    transform: scale(1.03);
+}
+
+.ja_body {
+    background-color: $surface-color;
+}
+
+.closejAlert {
+    display: none;
+}
+
+.ja_wrap.ja_wrap_black {
+    cursor: pointer;
+}

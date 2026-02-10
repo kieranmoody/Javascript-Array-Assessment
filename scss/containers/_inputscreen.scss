@@ -1,0 +1,89 @@
+//Input Screen
+@use "../utilities/index" as *;
+//Various Containers
+#random-image-frame {
+    width: 200px;
+    height: 133px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+}
+
+#random-image-positioning {
+    display: flex;
+    justify-content: center;
+}
+
+.input-screen {
+    z-index: 2;
+    transition: transform 2s ease-in-out;
+    transform: translateX(0);
+}
+
+//Random Image
+#random-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+//Buttons
+button {
+    @include buttons;
+    padding: 12px 18px;
+}
+button:hover:not(.empty-gallery) {
+    background: $primary-focus;
+    cursor: pointer;
+    transform: translateY(-1px);
+}
+button:active:not(.empty-gallery) {
+    transform: translateY(0);
+}
+
+#show-gallery {
+    @include buttons;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 8px 14px;
+    font-size: 12px;
+}
+
+//Media
+@media (min-width: 500px) and (max-width: 767px) {
+    #random-image-frame {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #random-image-frame {
+        width: 600px;
+        height: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #random-image-frame {
+        width: 800px;
+        height: 533px;
+    }
+    #show-gallery {
+        padding: 12px 18px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #email-submit {
+        width: 50%;
+        align-self: center;
+    }
+}

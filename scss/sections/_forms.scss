@@ -1,0 +1,67 @@
+//Form Css
+@use "../utilities/index" as *;
+#email-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#email-address {
+    display: block;
+    margin-bottom: 5px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+#email-address:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
+
+//Success Form Popups
+#form-status {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    background: #e6f7ee;
+    color: $success-color;
+    border: 1px solid #b7e4c7;
+
+    pointer-events: none;
+}
+
+#form-status.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+//Failure Form Popups
+.field-error {
+    font-size: 0.85rem;
+    color: $failure-color;
+    margin-top: 6px;
+    min-height: 18px; /* prevents layout jumping */
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.field-error.show {
+    opacity: 1;
+}
+
+.input-invalid {
+    border: 2px solid $failure-color !important;
+    outline: none;
+}
+
+.input-valid {
+    border: 2px solid $success-color !important;
+}
+

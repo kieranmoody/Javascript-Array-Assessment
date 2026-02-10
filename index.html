@@ -3,33 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Javascript Photo Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <!--CSS Links-->
     <link rel="stylesheet" href="js/plugins/jAlert/jAlert.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <main class="web">
+        <!--Cookies-->
+        <div id="cookie-wrapper">
+            <div id="cookie-container">
+                <div id="cookie-prompt">
+                    <div id="cookie-box">
+                        <div id="cookie-header">
+                            <h1 id="cookie-title">Sorry</h1>
+                        </div>
+                        <div id="cookie-body">
+                            <p>
+                                This website can only function when using javascript.
+                                <br>
+                                You currently do not have javascript enabled. Enable javascript to use this website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="input-screen">
-            <div class="title">
-                Enter an email that you want associated with the image
+            <div class="container">
+                <div class="title">
+                    <h1>Save this image</h1>
+                    <p class="subtitle">Enter an email that you want associated with the image</p>
+                </div>
+                <button id="show-gallery">Show gallery</button>
+                <div id="random-image-positioning">
+                    <div id="random-image-frame">
+                        <img class="zoomable" id="random-image" alt="A random image">
+                        <img id="no-js-image" src="images/no-js-image.jpg" alt="An image of some friendly walrus">
+                    </div>
+                </div>
+                <form method="GET" id="email-form" onsubmit="return validateForm()" novalidate>
+                    <input placeholder="*Email Address..." id="email-address" name="email" type="email" maxlength="128" value>
+                    <button id="email-submit">Submit</button>
+                    <div id="email-error" class="field-error"></div>
+                </form>
+                <div id="form-status" aria-live="polite">
+                </div>
             </div>
-            <button id="show-gallery">Show gallery</button>
-            <div>
-                <img id="random-image" alt="A random image">
-            </div>
-            <form method="GET" id="email-form" onsubmit="return validateForm()" novalidate>
-                <input placeholder="*Email Address..." id="email-address" name="email" type="email" maxlength="128" value>
-                <button id="email-submit">Submit</button>
-            </form>
         </div>
         <div class="gallery-screen">
-            <div class="title">
-                This is a gallery of your images, along with their emails
-            </div>
-            <button id="show-input">Show input</button>
-            <div id="gallery-output">
-                
+            <div class="container">
+                <div class="title">
+                    <h1>This is a gallery of your images</h1> 
+                        <p class="subtitle">Along with their emails</p>
+                </div>
+                <button id="show-input">Show input</button>
+                <div id="gallery-output">
+                    
+                </div>
             </div>
         </div>
     </main>
