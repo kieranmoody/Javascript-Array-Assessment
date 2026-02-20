@@ -37,7 +37,9 @@
                     <p class="subtitle">Enter an email that you want associated with the image</p>
                 </div>
                 <button id="show-gallery">Show gallery</button>
-                <button id="next-image">New Image</button>
+                <div id="next-image-holder">
+                    <button id="next-image">New Image</button>
+                </div>
                 <div id="random-image-positioning">
                     <div id="random-image-frame">
                         <img class="zoomable" id="random-image" alt="A random image">
@@ -45,7 +47,8 @@
                     </div>
                 </div>
                 <form method="GET" id="email-form" onsubmit="return validateForm()" novalidate>
-                    <input placeholder="*Email Address..." id="email-address" name="email" type="email" maxlength="128" value>
+                    <input placeholder="*Email Address..." id="email-address" name="email" type="email" list="email-list" maxlength="128" value>
+                    <datalist id="email-list"></datalist>
                     <button id="email-submit">Submit</button>
                     <div id="email-error" class="field-error"></div>
                 </form>

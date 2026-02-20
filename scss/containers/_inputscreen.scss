@@ -22,6 +22,7 @@
     z-index: 2;
     transition: transform 2s ease-in-out;
     transform: translateX(0);
+    background-color: $background-color;
 }
 
 //Random Image
@@ -55,12 +56,16 @@ button:active:not(.empty-gallery) {
     font-size: 12px;
 }
 
+#next-image-holder {
+    display: flex;
+    justify-content: center;
+}
 #next-image {
     background-color: $alternate-color;
     display: block;
-    justify-self: center;
     margin-bottom: 5px;
 }
+
 #next-image:hover {
     background-color: $alternate-focus;
 }

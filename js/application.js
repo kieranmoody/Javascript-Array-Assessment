@@ -208,6 +208,7 @@ function validateForm() {
 
     //Store the image
     imageAssignments[email].push(currentImageValue);
+    updateEmailList();
     showGalleryBtn.classList.remove("empty-gallery");
 
     //Debug - does it work?
@@ -218,9 +219,22 @@ function validateForm() {
     return false; //Prevent page refresh
 }
 
+function updateEmailList() {
+    const emailList = document.getElementById("email-list");
+    emailList.innerHTML = "";//clears the list to avoid duplication of emails
+
+    //object.keys gives me all the emails
+    Object.keys(imageAssignments).forEach(email => {
+        const option = document.createElement("option");
+        option.value = email;
+        emailList.appendChild(option);
+    });
+}
+
+const status = document.getElementById("form-status");
 //Email success
 function showFormStatus(message) {
-    const status = document.getElementById("form-status");
+    
 
     //Reset animation, so they get full feedback every time
     status.classList.remove("show");
@@ -245,6 +259,13 @@ function setEmailError(message = "") {
         error.classList.add("show");
         input.classList.add("input-invalid");
         input.classList.remove("input-valid");
+        status.classList.remove("show");
+        if (message === "This email has already been associated with this image"){
+            message._timeout = setTimeout(() => {
+                error.classList.remove("show");
+                input.classList.add("input-invalid");
+            }, 3000);
+        }
     } else {
         error.textContent = "";
         error.classList.remove("show");
