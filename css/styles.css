@@ -340,6 +340,7 @@ cite {
 html, body {
   margin: 0;
   padding: 0;
+  background: #5a5b5c;
 }
 
 .web {
@@ -359,7 +360,6 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #5a5b5c;
   color: #000000;
 }
 
@@ -393,7 +393,6 @@ body {
 
 @media (min-width: 1400px) {
   .container {
-    padding: 30px 15%;
     max-width: 900px;
   }
   .title h1 {
@@ -466,23 +465,30 @@ button:active:not(.empty-gallery) {
   font-size: 12px;
 }
 
+#next-image {
+  background-color: #b81d1d;
+  display: block;
+  justify-self: center;
+  margin-bottom: 5px;
+}
+
+#next-image:hover {
+  background-color: #b80000;
+}
+
 @media (min-width: 500px) and (max-width: 767px) {
   #random-image-frame {
     width: 400px;
     height: 300px;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
   #random-image-frame {
     width: 600px;
     height: 400px;
   }
 }
 @media (min-width: 1024px) {
-  #random-image-frame {
-    width: 800px;
-    height: 533px;
-  }
   #show-gallery {
     padding: 12px 18px;
     font-size: 16px;

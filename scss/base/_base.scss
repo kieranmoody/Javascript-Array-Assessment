@@ -4,6 +4,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    background: $background-color;
 }
 
 .web {
@@ -23,7 +24,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: $background-color;
+
     color: $base-font-color;
 }
 
@@ -55,7 +56,6 @@ body {
 
 @media (min-width: 1400px) {
     .container {
-        padding: 30px 15%;
         max-width: 900px;
     }
     .title h1 {

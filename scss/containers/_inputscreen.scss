@@ -55,6 +55,16 @@ button:active:not(.empty-gallery) {
     font-size: 12px;
 }
 
+#next-image {
+    background-color: $alternate-color;
+    display: block;
+    justify-self: center;
+    margin-bottom: 5px;
+}
+#next-image:hover {
+    background-color: $alternate-focus;
+}
+
 //Media
 @media (min-width: 500px) and (max-width: 767px) {
     #random-image-frame {
@@ -63,18 +73,13 @@ button:active:not(.empty-gallery) {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
     #random-image-frame {
         width: 600px;
         height: 400px;
     }
 }
-
 @media (min-width: 1024px) {
-    #random-image-frame {
-        width: 800px;
-        height: 533px;
-    }
     #show-gallery {
         padding: 12px 18px;
         font-size: 16px;

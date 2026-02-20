@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputScreen = document.querySelector(".input-screen");
     const galleryScreen = document.querySelector(".gallery-screen");
     const showInputBtn = document.getElementById("show-input");
+    const newImageBtn = document.getElementById("next-image")
+
+    newImageBtn.addEventListener("click", () => {
+        loadRandomImage(); //Give new image
+    })
 
     //No emails yet? Give the button a class so I can cs it to look different and disable it
     if (Object.keys(imageAssignments).length === 0) {
@@ -184,6 +189,17 @@ function validateForm() {
     emailInput.classList.remove("input-valid");
     formDirty = false; //Form is no longer dirty, user refresh with no prompt
 
+    //Does this email already exist?
+    if (!imageAssignments[email]) {
+        //console.log("email does not exist");
+    } else if (imageAssignments[email].includes (currentImageValue)) {
+        setEmailError("This email has already been associated with this image");
+        emailInput.focus();
+        //console.log("email exists, and has been attatched to the image");
+        return false;
+    }
+        //console.log("if statement passed");
+        
     //Image-Email-Link-Pt2
     //Create array if this email hasn't been seen before
     if (!imageAssignments[email]) {
@@ -198,8 +214,6 @@ function validateForm() {
     console.log(imageAssignments);
 
     showFormStatus("Image saved to gallery ✓");
-
-    loadRandomImage(); //Give new image
 
     return false; //Prevent page refresh
 }
